@@ -69,8 +69,6 @@ orgs.newOrg('eclipse-xtext') {
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -87,8 +85,6 @@ orgs.newOrg('eclipse-xtext') {
       ],
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
@@ -120,8 +116,6 @@ orgs.newOrg('eclipse-xtext') {
       default_branch: "master",
       delete_branch_on_merge: false,
       description: "xtext-website-publish",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
         default_workflow_permissions: "write",
