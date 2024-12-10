@@ -9,6 +9,15 @@ orgs.newOrg('eclipse-xtext') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  webhooks+: [
+    orgs.newOrgWebhook('https://ci.eclipse.org/xtext/github-webhook/') {
+      content_type: "json",
+      events+: [
+        "pull_request",
+        "push"
+      ],
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('xtext') {
       allow_merge_commit: true,
@@ -25,9 +34,6 @@ orgs.newOrg('eclipse-xtext') {
       has_discussions: true,
       homepage: "http://www.eclipse.org/Xtext",
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
       webhooks: [
         orgs.newRepoWebhook('https://xtext-builds.itemis.de/jenkins/ghprbhook/') {
           events+: [
@@ -70,9 +76,6 @@ orgs.newOrg('eclipse-xtext') {
       default_branch: "master",
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
     },
     orgs.newRepo('xtext-website') {
       allow_merge_commit: true,
@@ -86,9 +89,6 @@ orgs.newOrg('eclipse-xtext') {
       code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: null,
@@ -117,9 +117,6 @@ orgs.newOrg('eclipse-xtext') {
       delete_branch_on_merge: false,
       description: "xtext-website-publish",
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
     },
   ],
 }
