@@ -47,7 +47,7 @@ orgs.newOrg('eclipse-xtext') {
             "push"
           ],
         },
-        orgs.newRepoWebhook('https://hooks.slack.com/services/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') {
+        orgs.newRepoWebhook('https://hooks.slack.com/services/T0KEWVAQN/B0KEY7U2W/*') {
           content_type: "json",
           events+: [
             "*"
