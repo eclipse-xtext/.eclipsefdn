@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-xtext') {
+orgs.newOrg('modeling.tmf.xtext', 'eclipse-xtext') {
   settings+: {
     description: "",
     name: "Eclipse Xtext project",
